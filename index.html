@@ -170,6 +170,23 @@ footer b{color:#fff}
 .bottomline p:last-child{margin-bottom:0}
 .bottomline b{color:#fff}
 
+/* ---------- CONTRACTOR QUESTIONS ---------- */
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2px 0 4px}
+.qcard{border:1px solid var(--line);border-radius:10px;padding:20px 22px;background:var(--card)}
+.qcard.teal{border-top:4px solid var(--green)}
+.qcard.tein{border-top:4px solid var(--amber)}
+.qcard .qh{font-family:"Barlow Condensed";font-weight:700;font-size:22px;line-height:1;margin:0}
+.qcard.teal .qh{color:var(--green-deep)}.qcard.tein .qh{color:var(--gold-deep)}
+.qcard .qsub{font-size:12.5px;color:var(--muted);margin:3px 0 14px}
+.qcard ol{margin:0;padding:0;list-style:none;counter-reset:q;display:grid;gap:12px}
+.qcard ol li{position:relative;padding-left:30px;font-size:13.5px;line-height:1.5;color:var(--ink);counter-increment:q}
+.qcard ol li b{color:var(--green-deep)}
+.qcard.tein ol li b{color:var(--gold-deep)}
+.qcard ol li::before{content:counter(q);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:6px;
+  font-family:"Barlow Condensed";font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;color:#fff}
+.qcard.teal ol li::before{background:var(--green)}
+.qcard.tein ol li::before{background:var(--amber)}
+
 /* ---------- TABS ---------- */
 .tabbar{position:sticky;top:0;z-index:50;background:var(--green-deep);border-bottom:3px solid var(--gold)}
 .tabbar .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
@@ -190,6 +207,7 @@ footer b{color:#fff}
 
 @media(max-width:780px){
   .ladder{grid-template-columns:1fr}
+  .qgrid{grid-template-columns:1fr}
   .larr{transform:rotate(90deg);height:18px}
   .rfi ul{columns:1}
   .vgrid{grid-template-columns:1fr}
@@ -252,13 +270,13 @@ footer b{color:#fff}
       <div class="lab">Teinert — base bid</div>
       <div class="big">$6,702,412</div>
       <div class="sf">$157.78 / SF</div><br>
-      <span class="pill y">Limited detail provided</span>
+      <span class="pill y">Detailed breakdown provided</span>
     </div>
     <div class="vcard delta">
       <div class="lab">Teinert lower by</div>
       <div class="big">$534,181</div>
       <div class="sf">8.0% under Teal on base bid</div>
-      <div class="note">After leveling rock allowance &amp; contingency equally, the gap narrows to <b>$333,108</b> — and only holds if Teinert's lighter divisions are real savings, not missing scope.</div>
+      <div class="note">Teinert's detailed breakdown confirms the big items (septic, controls) are included, so the lower number is largely real. The main open question is the rock-excavation basis.</div>
     </div>
   </div>
   <div class="callout" style="margin-top:24px">
@@ -266,10 +284,10 @@ footer b{color:#fff}
     <p>The two GCs bucketed scope differently. Teal folds <b>all site concrete paving into Division&nbsp;03</b>, while Teinert breaks it out in <b>Division&nbsp;32</b>. That alone makes Teal's Div&nbsp;03 look ~$908K high and its Div&nbsp;32 look low — pure allocation, not price. See <b>Cost Comparison</b> for the normalized read (true gap ~$209K).</p>
   </div>
   <div class="bottomline" style="margin-top:8px">
-    <h3>Don't award on price alone yet.</h3>
-    <p>Teinert is lower at every level of leveling — <b>$534,181</b> on the raw base bids, <b>$483,108</b> after each bid's own adds, and <b>$333,108</b> once rock is applied to both sides. That ordering is consistent, so Teinert is genuinely the lower number.</p>
-    <p>But the spread lives almost entirely in <b>Divisions 03, 31, 32 and 33</b>. The responsibility matrix clears most of the earlier "confirm" flags — PEMB, steel, glazing, façade and fire systems are supplier and vendor scope, correctly excluded by both. The open list is now short: Teinert's <b>TCS controls, septic and monument masonry</b> (all GC scope per the matrix), the <b>earthwork reconciliation</b>, and small true-ups on Teal (<b>add the yard bell, deduct the fire specialties</b>).</p>
-    <p>Recommended next step: a formal scope-leveling session on concrete, earthwork, paving and utilities — see <b>Next Steps</b> for the clarifications to send each GC.</p>
+    <h3>Teinert's lead looks real — confirm a short list.</h3>
+    <p>Teinert is lower at every level of leveling — <b>$534,181</b> on the raw base bids, <b>$483,108</b> after each bid's own adds, and <b>$333,108</b> once rock is applied to both sides. Teinert's detailed breakdown now backs that up: the two biggest feared gaps — the aerobic septic (~$196K) and the TCS controls (~$53K) — are both fully included, and structural steel and exterior glazing are correctly left to the supplier.</p>
+    <p>The lower number is mostly leaner pricing and lower overhead/fee (~$210K below Teal), not missing scope. The open list is short: Teinert's <b>rock-excavation basis</b> (shown "included" with no allowance, where Teal hedges with $150K), its small <b>monument-masonry and HVAC-commissioning</b> exclusions, a Teal-side question on <b>interior drywall</b> ($64K Teinert itemizes that Teal doesn't show), and <b>re-pricing Teal at the 10-month schedule</b>.</p>
+    <p>Net: this is closer to a real ~$333–483K advantage than a scope mirage. Resolve the rock basis and the Teal drywall line — see <b>Next Steps</b> — and the comparison is largely firm.</p>
   </div>
 </section>
 
@@ -300,7 +318,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">04</td>
-        <td class="cdesc">Masonry <span class="note">Teinert higher yet excludes monument-sign masonry.</span></td>
+        <td class="cdesc">Masonry <span class="note">Detail: Teinert's CMU fence is $307,750 vs Teal's $225,900 — richer fence pricing. Teinert puts monument masonry "by Owner" (matrix = GC) — small Teinert gap.</span></td>
         <td class="num">$230,900</td>
         <td class="num">$307,750</td>
         <td class="num tein-pos">($76,850)</td>
@@ -308,7 +326,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">05</td>
-        <td class="cdesc">Metals <span class="note">Per matrix, structural & decorative steel is supplier scope (Sunbelt/CT Darnell) — Teal's light number fits. Verify Teinert isn't carrying supplier steel.</span></td>
+        <td class="cdesc">Metals <span class="note">Detail confirms Teinert puts structural/decorative steel & roof ladder with CT Darnell (supplier) — no double-carry. Difference is interior misc-metals pricing.</span></td>
         <td class="num">$17,500</td>
         <td class="num">$49,100</td>
         <td class="num tein-pos">($31,600)</td>
@@ -332,7 +350,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">08</td>
-        <td class="cdesc">Openings <span class="note">Per matrix, exterior doors/windows/skylights are supplier scope — GC carries interior & restroom only. Verify Teinert's $49K.</span></td>
+        <td class="cdesc">Openings <span class="note">Detail: Teinert carries interior doors/windows only ($51K); exterior glazing is CT Darnell. Higher number = richer interior pricing, not supplier scope.</span></td>
         <td class="num">$29,250</td>
         <td class="num">$49,004</td>
         <td class="num tein-pos">($19,754)</td>
@@ -340,7 +358,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">09</td>
-        <td class="cdesc">Finishes <span class="note">Teal's polished concrete ($52K) sits here. Confirm what drives Teinert's +$95K.</span></td>
+        <td class="cdesc">Finishes <span class="note">Detail: most of the gap is Drywall & Acoustical ($63,741) that Teinert itemizes and Teal does not show — confirm Teal's interior framing/drywall.</span></td>
         <td class="num">$110,685</td>
         <td class="num">$205,842</td>
         <td class="num tein-pos">($95,157)</td>
@@ -364,7 +382,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">22</td>
-        <td class="cdesc">Plumbing <span class="note">Teinert $62K looks light — confirm no scope gap.</span></td>
+        <td class="cdesc">Plumbing <span class="note">Detail: Teinert's $62K is interior plumbing only; site water sits in Utilities. Confirm the scope boundary vs Teal's $112K.</span></td>
         <td class="num">$111,669</td>
         <td class="num">$62,300</td>
         <td class="num teal-pos">+$49,369</td>
@@ -372,7 +390,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">23</td>
-        <td class="cdesc">HVAC <span class="note">Teinert +$95K despite EXCLUDING commissioning.</span></td>
+        <td class="cdesc">HVAC <span class="note">Detail: Teinert HVAC = $342,750 equipment + $52,551 TCS controls. Equipment alone is ~$43K above Teal; rest is controls allocation. Teinert excludes commissioning.</span></td>
         <td class="num">$300,116</td>
         <td class="num">$395,301</td>
         <td class="num tein-pos">($95,185)</td>
@@ -388,7 +406,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">27</td>
-        <td class="cdesc">Communications <span class="note">Matrix puts EMS/TCS controls in GC scope (26 09 00) — strengthens that Teinert's number omits TCS (~$53K).</span></td>
+        <td class="cdesc">Communications <span class="note">Detail resolves this: Teinert carries TCS ($52,551) under HVAC, not here. Comms + controls = $163,821 ≈ Teal's $163,819 — allocation, not a gap.</span></td>
         <td class="num">$163,819</td>
         <td class="num">$111,270</td>
         <td class="num teal-pos">+$52,549</td>
@@ -396,7 +414,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">31</td>
-        <td class="cdesc">Earthwork (incl. existing cond.) <span class="note">Largest real gap. Confirm Teinert covers SWPPP, retaining wall, detention pond.</span></td>
+        <td class="cdesc">Earthwork (incl. existing cond.) <span class="note">Detail: Teinert's $369K bundles SWPPP, demo, build pad & retaining-wall excavation — scope is present. Gap is leaner mass-grading; rock shown "included" with no allowance — confirm assumed quantity.</span></td>
         <td class="num">$638,492</td>
         <td class="num">$330,768</td>
         <td class="num teal-pos">+$307,724</td>
@@ -412,7 +430,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">33</td>
-        <td class="cdesc">Utilities <span class="note">Aerobic septic is GC scope per matrix (Davis Septic, ~$196K) — confirm Teinert's $1.01M includes it.</span></td>
+        <td class="cdesc">Utilities <span class="note">Detail confirms septic ($195,934, Davis) + domestic water ($812,400, incl. sanitary/storm/detention/fire line). Comprehensive.</span></td>
         <td class="num">$1,049,933</td>
         <td class="num">$1,008,334</td>
         <td class="num teal-pos">+$41,599</td>
@@ -436,7 +454,7 @@ footer b{color:#fff}
     <thead><tr><th>Combined scope</th><th class="num">Teal</th><th class="num">Teinert</th><th class="num">Variance</th></tr></thead>
     <tbody>
       <tr>
-        <td class="cdesc"><strong>Concrete + ALL site paving</strong><span class="note">Apples-to-apples. Real gap is +$209K, not +$908K.</span></td>
+        <td class="cdesc"><strong>Concrete + ALL site paving</strong><span class="note">Detail confirms Teinert's concrete is comprehensive (foundation, site concrete, paving, retaining wall). Real gap ~$155–209K, not $908K.</span></td>
         <td class="num">$1,885,900</td>
         <td class="num">$1,676,850</td>
         <td class="num teal-pos">+$209,050</td>
@@ -495,9 +513,9 @@ footer b{color:#fff}
         <td class="amid tein-c">$201,072 <span class='sub'>3%, Owner keeps 100%</span></td>
       </tr>
       <tr>
-        <td class="cdesc"><strong>Payment &amp; Performance bond</strong><span class="note">Both exclude. Add ~0.8–1.5% to each if required.</span></td>
+        <td class="cdesc"><strong>Payment &amp; Performance bond</strong><span class="note">Both exclude from base. Teinert's detail prices it at 1.5% ($59,167); add a comparable ~0.8–1.5% to Teal if required.</span></td>
         <td class="amid teal-c">Excluded</td>
-        <td class="amid tein-c">Excluded</td>
+        <td class="amid tein-c">Excluded — $59,167 priced</td>
       </tr>
       <tr>
         <td class="cdesc"><strong>Building permit / PEMB</strong><span class="note">Both assume Owner pulls permit and furnishes the metal building.</span></td>
@@ -527,23 +545,23 @@ footer b{color:#fff}
       <tr class="m-ok">
         <td class="cdesc">PEMB insulation (sales bldg)</td>
         <td>Excluded</td>
-        <td>Excluded</td>
+        <td>By Owner (CT Darnell)</td>
         <td class="mx">Sunbelt/CT Darnell</td>
         <td class="flag">&#10003;</td>
       </tr>
-      <tr class="m-warn">
+      <tr class="m-ok">
         <td class="cdesc">Structural &amp; decorative steel</td>
         <td>Light — bollards only</td>
-        <td>$49,100 div total</td>
+        <td>By Owner (CT Darnell)</td>
         <td class="mx">Sunbelt/CT Darnell</td>
-        <td class="flag">!</td>
+        <td class="flag">&#10003;</td>
       </tr>
-      <tr class="m-warn">
+      <tr class="m-ok">
         <td class="cdesc">Exterior doors / windows / skylights</td>
         <td>Excluded</td>
-        <td>Confirm</td>
+        <td>By Owner (CT Darnell)</td>
         <td class="mx">Sunbelt/CT Darnell</td>
-        <td class="flag">!</td>
+        <td class="flag">&#10003;</td>
       </tr>
       <tr class="m-ok">
         <td class="cdesc">Exterior rock façade / wainscot</td>
@@ -566,80 +584,80 @@ footer b{color:#fff}
         <td class="mx">1st Fire Protection</td>
         <td class="flag">&#10003;</td>
       </tr>
+      <tr class="m-ok">
+        <td class="cdesc">Aerobic septic system</td>
+        <td>Incl. ($195,933)</td>
+        <td>Incl. ($195,934)</td>
+        <td class="mx">GC — Davis Septic</td>
+        <td class="flag">&#10003;</td>
+      </tr>
+      <tr class="m-ok">
+        <td class="cdesc">TCS / EMS controls</td>
+        <td>Incl. ($52,551)</td>
+        <td>Incl. ($52,551)</td>
+        <td class="mx">GC — 26 09 00</td>
+        <td class="flag">&#10003;</td>
+      </tr>
+      <tr class="m-ok">
+        <td class="cdesc">Polished concrete</td>
+        <td>Incl. ($52K)</td>
+        <td>Incl. ($74K)</td>
+        <td class="mx">GC — 03 35 43</td>
+        <td class="flag">&#10003;</td>
+      </tr>
+      <tr class="m-ok">
+        <td class="cdesc">Electrical (MTZ) / lighting (DVD)</td>
+        <td>$1.264M</td>
+        <td>$1.267M</td>
+        <td class="mx">GC — MTZ + DVD</td>
+        <td class="flag">&#10003;</td>
+      </tr>
       <tr class="m-warn">
         <td class="cdesc">Knox Box, fire ext. &amp; cabinets</td>
         <td>Incl. (~$8K)</td>
-        <td>Excluded</td>
+        <td>Incl. (w/ toilet comp.)</td>
         <td class="mx">1st Fire Protection (Owner)</td>
         <td class="flag">!</td>
       </tr>
       <tr class="m-warn">
         <td class="cdesc">Yard bell / buzzer</td>
         <td>Excluded</td>
-        <td>Appears incl.</td>
+        <td>Incl. (OFCI, installs)</td>
         <td class="mx">GC — 11 12 00</td>
         <td class="flag">!</td>
-      </tr>
-      <tr class="m-ok">
-        <td class="cdesc">Exterior branding signage</td>
-        <td>By Owner</td>
-        <td>By Owner</td>
-        <td class="mx">Highpoint</td>
-        <td class="flag">&#10003;</td>
       </tr>
       <tr class="m-warn">
         <td class="cdesc">Monument-sign masonry assembly</td>
         <td>Included</td>
+        <td>By Owner — excluded</td>
+        <td class="mx">GC builds; Highpoint mounts</td>
+        <td class="flag">!</td>
+      </tr>
+      <tr class="m-warn">
+        <td class="cdesc">Interior framing &amp; drywall</td>
+        <td>Not itemized — confirm</td>
+        <td>Incl. ($63,741)</td>
+        <td class="mx">GC — interior buildout</td>
+        <td class="flag">!</td>
+      </tr>
+      <tr class="m-warn">
+        <td class="cdesc">HVAC commissioning</td>
+        <td>T&amp;B incl.</td>
         <td>Excluded</td>
-        <td class="mx">GC builds; Highpoint mounts cabinet</td>
+        <td class="mx">GC scope</td>
         <td class="flag">!</td>
       </tr>
-      <tr class="m-ok">
-        <td class="cdesc">Rough carpentry (planks/chocks/MDO)</td>
-        <td>By Owner</td>
+      <tr class="m-warn">
+        <td class="cdesc">Termite pre-treatment</td>
         <td>Excluded</td>
-        <td class="mx">McCoy's Carpenters</td>
-        <td class="flag">&#10003;</td>
-      </tr>
-      <tr class="m-ok">
-        <td class="cdesc">Storage racks / lockers / safe</td>
-        <td>By Owner</td>
-        <td>By Owner</td>
-        <td class="mx">McCoy's Carpenters / EA Constr.</td>
-        <td class="flag">&#10003;</td>
-      </tr>
-      <tr class="m-warn">
-        <td class="cdesc">Polished concrete</td>
-        <td>Incl. ($52K)</td>
-        <td>Confirm</td>
-        <td class="mx">GC — 03 35 43</td>
+        <td>Incl. (pest spray)</td>
+        <td class="mx">GC</td>
         <td class="flag">!</td>
       </tr>
       <tr class="m-warn">
-        <td class="cdesc">TCS / EMS controls</td>
-        <td>Incl. ($53K)</td>
-        <td>Appears excluded</td>
-        <td class="mx">GC — 26 09 00 (TCS + MTZ)</td>
-        <td class="flag">!</td>
-      </tr>
-      <tr class="m-warn">
-        <td class="cdesc">Aerobic septic system</td>
-        <td>Incl. ($196K)</td>
-        <td>Confirm</td>
-        <td class="mx">GC — Davis Septic</td>
-        <td class="flag">!</td>
-      </tr>
-      <tr class="m-ok">
-        <td class="cdesc">Electrical (MTZ) / lighting (DVD)</td>
-        <td>$1.264M</td>
-        <td>$1.267M</td>
-        <td class="mx">GC — MTZ + DVD vendors</td>
-        <td class="flag">&#10003;</td>
-      </tr>
-      <tr class="m-warn">
-        <td class="cdesc">Earthwork / retaining walls / SWPPP</td>
-        <td>$638K</td>
-        <td>$331K</td>
+        <td class="cdesc">Earthwork / rock quantity</td>
+        <td>$638K + $150K allow.</td>
+        <td>$369K; rock "incl.", no allow.</td>
         <td class="mx">GC — full scope</td>
         <td class="flag">!</td>
       </tr>
@@ -653,7 +671,7 @@ footer b{color:#fff}
       <tr class="m-warn">
         <td class="cdesc">P&amp;P bond</td>
         <td>Excluded</td>
-        <td>Excluded</td>
+        <td>Excl. ($59,167 priced)</td>
         <td class="mx">Not in matrix — Owner call</td>
         <td class="flag">!</td>
       </tr>
@@ -672,32 +690,55 @@ footer b{color:#fff}
 </section>
 
 <section class="panel" id="next" role="tabpanel" aria-label="Next Steps">
-  <div class="shead"><h2>Where to focus before award</h2></div>
+  <div class="shead"><h2>Three questions for each contractor</h2></div>
+  <p class="lead">The fastest way to firm up the comparison — send these first. Each targets exactly where that bid is exposed.</p>
+  <div class="qgrid">
+    <div class="qcard teal">
+      <div class="qh">Teal Construction</div>
+      <p class="qsub">Detailed bid — one scope question and a schedule lever.</p>
+      <ol>
+        <li><b>Interior framing &amp; drywall.</b> Teinert itemizes $63,741 of drywall &amp; acoustical; your estimate shows no comparable line. Where is the interior metal-stud framing and drywall for the offices, restrooms and data room carried?</li>
+        <li><b>10-month schedule.</b> Your bid was priced at 12 months; the target — and Teinert's bid — is 10. Please re-price your general conditions (~$500K) and fee for a 10-month schedule.</li>
+        <li><b>True-ups &amp; rock basis.</b> Add the yard bell (GC scope) and termite pre-treatment if required, confirm whether the Knox Box + fire extinguishers (~$8K, 1st Fire Protection's scope) should be deleted, and give the unit-rate basis for the $150K rock allowance.</li>
+      </ol>
+    </div>
+    <div class="qcard tein">
+      <div class="qh">Teinert Construction</div>
+      <p class="qsub">Detailed breakdown received — a few items left to firm up.</p>
+      <ol>
+        <li><b>Rock excavation.</b> Your earthwork, utilities and septic all show rock excavation "included" with no separate allowance. Is that a firm fixed-price commitment regardless of quantity (no change orders), or a nominal assumption? Teal instead carries a $150K allowance.</li>
+        <li><b>Earthwork pricing.</b> Your earthwork ($369K, bundling SWPPP, demo, build pad and retaining-wall excavation) runs ~$270K below Teal. Confirm the mass-grading cut/fill and import/export quantities behind it.</li>
+        <li><b>Exclusions vs. the matrix.</b> You show the monument-sign masonry "by Owner" and HVAC commissioning excluded, but the responsibility matrix puts the monument cultured-stone assembly on the GC. Confirm these are intended and price the adds.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="shead mt"><h2>Where to focus before award</h2></div>
   <ol class="findings">
-      <li><span class="fnum">01</span><div><h4>The matrix clears most "by Owner" lines</h4><p>PEMB &amp; erection, structural/decorative steel, exterior glazing, rock façade, fire suppression, fire alarm/security, branding signage and rough carpentry are all assigned to the supplier (Sunbelt/CT Darnell), 1st Fire Protection, Highpoint or McCoy's Carpenters. Both GCs correctly exclude them — these are not gaps.</p></div></li>
-      <li><span class="fnum">02</span><div><h4>Confirmed Teinert scope gaps</h4><p>The matrix makes TCS/EMS controls (~$53K) and the aerobic septic system (~$196K, Davis Septic) GC scope, so Teinert omitting either is a real gap — not a saving. Plumbing ($62K vs $112K) and earthwork (-$308K) remain to be reconciled. Teinert's monument-sign masonry exclusion is also a likely gap, since that assembly is GC scope.</p></div></li>
-      <li><span class="fnum">03</span><div><h4>Two small corrections on Teal</h4><p>Teal carries ~$8K of Owner scope (Knox Box + fire extinguishers belong to 1st Fire Protection) and excluded the yard bell that the matrix makes GC scope — roughly a wash, but both should be trued up.</p></div></li>
-      <li><span class="fnum">04</span><div><h4>It's not a uniformly lean bid</h4><p>Teinert is higher on HVAC (+$95K), Finishes (+$95K) and Masonry (+$77K). With exterior steel and glazing being supplier scope, Teinert's higher Metals and Openings are worth a second look to confirm no supplier scope is double-carried.</p></div></li>
-      <li><span class="fnum">05</span><div><h4>Level the risk items</h4><p>Teal recommends a $150K rock allowance but carries no contingency; Teinert carries 3% contingency but no rock allowance. On equal footing, Teinert is still ~$333K lower.</p></div></li>
-      <li><span class="fnum">06</span><div><h4>Mind the shared exclusions</h4><p>Both exclude the P&P bond (not in the matrix — an Owner decision). Add bond cost to both bids before comparing final award numbers.</p></div></li></ol>
+      <li><span class="fnum">01</span><div><h4>The Teinert detail closes the big gaps</h4><p>The two items I most feared were missing — the aerobic septic (~$196K, Davis Septic) and the TCS/EMS controls (~$53K) — are both fully included. The apparent Communications shortfall was allocation: Teinert carries TCS under HVAC, so its comms + controls ($163,821) match Teal's ($163,819) almost exactly.</p></div></li>
+      <li><span class="fnum">02</span><div><h4>Supplier scope is correctly excluded by both</h4><p>Teinert's breakdown confirms structural &amp; decorative steel, the roof ladder, and all exterior doors / windows / skylights sit with CT Darnell (the supplier). So Teinert's higher Metals and Openings are richer pricing of legitimate interior scope — not double-carried supplier work.</p></div></li>
+      <li><span class="fnum">03</span><div><h4>Teinert's lower number is largely real</h4><p>Most of the spread is leaner pricing plus lower overhead and fee — Teinert's general conditions ($380K) and 5% fee ($319K) run about $210K below Teal's. That is markup, not missing scope.</p></div></li>
+      <li><span class="fnum">04</span><div><h4>One Teal-side question the detail surfaced</h4><p>Teinert itemizes $63,741 of drywall &amp; acoustical; Teal's estimate shows no comparable interior-framing / drywall line. Confirm Teal's interior buildout is carried — if it is a gap, Teal's number would rise.</p></div></li>
+      <li><span class="fnum">05</span><div><h4>Remaining open items are now narrow</h4><p>Teinert's rock-excavation basis (shown "included" with no allowance, vs Teal's $150K), its monument-masonry and HVAC-commissioning exclusions, plus the Teal yard-bell and termite gaps. Small dollars except the rock question.</p></div></li>
+      <li><span class="fnum">06</span><div><h4>The schedule is a live lever</h4><p>Teinert priced at 10 months; Teal at 12. Teal's general conditions and fee scale with duration, so re-pricing Teal at 10 months could lower its number — request it before treating any comparison as final.</p></div></li></ol>
 
   <div class="shead mt"><h2>Clarifications to request before award</h2></div>
   <p class="lead">A leveled award decision needs these answered by both GCs — most of the apparent spread lives in the first two items.</p>
   <ol class="rfi">
     <li><span class="rnum">1</span><div>
-      <h4>Division 03 — concrete reconciliation</h4>
-      <p class="ask">Get each GC's full Div 03 + paving breakout so the normalized ~$209K gap can be verified, line by line:</p>
-      <ul><li>Building foundations &amp; slab</li><li>Site concrete paving</li><li>Retaining walls</li><li>Light-pole bases</li><li>Transformer pad</li><li>Canopy &amp; sign foundations</li></ul>
+      <h4>Concrete &amp; interior buildout</h4>
+      <p class="ask">Teinert's Div 03 breakout is now in hand; the open piece is on Teal's side. Reconcile, line by line:</p>
+      <ul><li>Teal interior framing &amp; drywall (Teinert shows $63,741; Teal shows none)</li><li>Building foundation/slab figures</li><li>Site concrete paving</li><li>Retaining walls</li><li>Light-pole bases &amp; transformer pad</li><li>Canopy &amp; sign foundations</li></ul>
     </div></li>
     <li><span class="rnum">2</span><div>
       <h4>Divisions 31 / 32 / 33 — site reconciliation</h4>
       <p class="ask">The earthwork gap (+$308K Teal) and utilities are the next-largest swing. Confirm scope parity on:</p>
-      <ul><li>Rock excavation basis &amp; quantities</li><li>Subgrade and import/export assumptions</li><li>Retaining wall scope &amp; height</li><li>SWPPP and detention pond</li><li>Aerobic septic system inclusion</li><li>Landscape &amp; fencing scope</li></ul>
+      <ul><li>Rock excavation — firm fixed price vs. assumed quantity</li><li>Mass-grading cut/fill and import/export quantities</li><li>Retaining wall scope &amp; height</li><li>SWPPP and detention pond (confirmed bundled — verify)</li><li>Maintenance-drive base (Teinert flags "QUALIFY")</li><li>Landscape &amp; fencing scope</li></ul>
     </div></li>
     <li><span class="rnum">3</span><div>
-      <h4>Close Teinert's gaps — all matrix-confirmed GC scope</h4>
-      <p class="ask">The matrix makes each of these GC scope, so confirm it's carried or price the add:</p>
-      <ul><li>TCS / EMS controls — 26 09 00 (~$53K)</li><li>Aerobic septic — Davis Septic (~$196K)</li><li>Monument-sign masonry assembly</li><li>Plumbing scope ($62K vs Teal's $112K)</li></ul>
+      <h4>Teinert — remaining open items</h4>
+      <p class="ask">The detail confirms septic and TCS controls are carried; these are what's left:</p>
+      <ul><li>Rock-excavation basis — firm fixed price or nominal?</li><li>Monument-sign masonry (matrix = GC scope)</li><li>HVAC commissioning (currently excluded)</li><li>Plumbing scope boundary ($62K interior only)</li></ul>
     </div></li>
     <li><span class="rnum">4</span><div>
       <h4>Allowances, risk &amp; schedule</h4>
@@ -711,8 +752,8 @@ footer b{color:#fff}
 
 <footer>
   <div class="wrap">
-    <p><b>Basis of analysis.</b> Teal's bid form, control estimate, and clarifications (rev. 6.19.2026) reconciled to the dollar; Teinert's bid form (rev. 6.19.2026) with the assumptions listed on it; and the responsibility matrix (rev. 6.10.2026) used to settle scope assignments.</p>
-    <p><b>Caveat.</b> Teinert provided no line-item breakdown, so several "confirm" items are inferred from what was <i>not</i> stated. Resolve the flagged scope questions in a reconciliation call before treating either number as final.</p>
+    <p><b>Basis of analysis.</b> Teal's bid form, control estimate, and clarifications (rev. 6.19.2026) reconciled to the dollar; Teinert's bid form and detailed cost breakdown (rev. 6.19.2026); and the responsibility matrix (rev. 6.10.2026) used to settle scope assignments.</p>
+    <p><b>Caveat.</b> Both bids now have line-item detail. Teinert's recap uses a 42,625 SF building area vs. 42,480 SF here — immaterial to the comparison. A short reconciliation call on the items flagged in Next Steps will firm up the final award numbers.</p>
     <p style="margin-top:10px;color:#8FB596">McCoy's Building Supply #122 — Canyon Lake · Bid leveling, not a recommendation to award.</p>
   </div>
 </footer>
