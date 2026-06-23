@@ -187,6 +187,32 @@ footer b{color:#fff}
 .qcard.teal ol li::before{background:var(--green)}
 .qcard.tein ol li::before{background:var(--amber)}
 
+/* ---------- SCHEDULE / GANTT ---------- */
+.schedstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:2px 0 20px}
+.sstat{background:var(--card);border:1px solid var(--line);border-radius:10px;border-top:3px solid var(--green);padding:14px 16px}
+.sstat .sk{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.sstat .sv{font-family:"Barlow Condensed";font-weight:700;font-size:23px;color:var(--green-deep);line-height:1.05;margin-top:4px}
+.sstat .sd{font-size:12px;color:var(--muted);margin-top:2px}
+.gantt{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:16px 18px 14px;overflow-x:auto}
+.gantt .ghead,.grow{display:grid;grid-template-columns:182px 1fr;align-items:center}
+.gmonths{display:flex;font-size:9.5px;color:var(--muted);padding-bottom:4px}
+.gmonths span{flex:1;text-align:center}
+.grow{height:27px}
+.grow .gl{font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:10px;font-weight:500}
+.gtrack{position:relative;height:18px;background-image:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px calc(100%/15))}
+.gbar{position:absolute;top:1px;height:16px;border-radius:3px;background:var(--green-mid)}
+.gbar.lever{background:var(--gold)}
+.gbar.hold{background:repeating-linear-gradient(45deg,#F1D27E 0 5px,#FBEEC6 5px 10px);border:1px dashed var(--gold-deep)}
+.gmilerow{height:32px}
+.gmilerow .gtrack{height:26px;background-image:none}
+.gflag{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
+.gflag i{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--gold-deep)}
+.gflag em{font-style:normal;font-size:9px;color:var(--gold-deep);white-space:nowrap;margin-top:1px;font-weight:700}
+.gflag.base i{border-top-color:var(--green-deep)}
+.gflag.base em{color:var(--green-deep)}
+.gkey{display:flex;gap:18px;font-size:12px;color:var(--muted);margin:12px 2px 0}
+.gkey span{display:inline-flex;align-items:center;gap:6px}
+
 /* ---------- TABS ---------- */
 .tabbar{position:sticky;top:0;z-index:50;background:var(--green-deep);border-bottom:3px solid var(--gold)}
 .tabbar .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
@@ -206,6 +232,7 @@ footer b{color:#fff}
 @media (prefers-reduced-motion:reduce){.panel{animation:none}}
 
 @media(max-width:780px){
+  .schedstats{grid-template-columns:1fr 1fr}
   .ladder{grid-template-columns:1fr}
   .qgrid{grid-template-columns:1fr}
   .larr{transform:rotate(90deg);height:18px}
@@ -252,6 +279,7 @@ footer b{color:#fff}
     <button class="tab" role="tab" data-tab="cost" aria-selected="false" tabindex="-1">Cost Comparison</button>
     <button class="tab" role="tab" data-tab="risk" aria-selected="false" tabindex="-1">Risk &amp; Allowances</button>
     <button class="tab" role="tab" data-tab="scope" aria-selected="false" tabindex="-1">Scope &amp; Matrix</button>
+    <button class="tab" role="tab" data-tab="schedule" aria-selected="false" tabindex="-1">Schedule</button>
     <button class="tab" role="tab" data-tab="next" aria-selected="false" tabindex="-1">Next Steps</button>
   </div>
 </nav>
@@ -286,7 +314,7 @@ footer b{color:#fff}
   <div class="bottomline" style="margin-top:8px">
     <h3>Teinert's lead looks real — confirm a short list.</h3>
     <p>Teinert is lower at every level of leveling — <b>$534,181</b> on the raw base bids, <b>$483,108</b> after each bid's own adds, and <b>$333,108</b> once rock is applied to both sides. Teinert's detailed breakdown now backs that up: the two biggest feared gaps — the aerobic septic (~$196K) and the TCS controls (~$53K) — are both fully included, and structural steel and exterior glazing are correctly left to the supplier.</p>
-    <p>The lower number is mostly leaner pricing and lower overhead/fee (~$210K below Teal), not missing scope. The open list is short: Teinert's <b>rock-excavation basis</b> (shown "included" with no allowance, where Teal hedges with $150K), its small <b>monument-masonry and HVAC-commissioning</b> exclusions, a Teal-side question on <b>interior drywall</b> ($64K Teinert itemizes that Teal doesn't show), and <b>re-pricing Teal at the 10-month schedule</b>.</p>
+    <p>The lower number is mostly leaner pricing and lower overhead/fee (~$210K below Teal), not missing scope. The open list is short: Teinert's <b>rock-excavation basis</b> (shown "included" with no allowance, where Teal hedges with $150K), its small <b>monument-masonry and HVAC-commissioning</b> exclusions, a Teal-side question on <b>interior drywall</b> ($64K Teinert itemizes that Teal doesn't show), and <b>re-pricing Teal at the 10-month schedule</b> (its 12-month plan runs ~3 months past McCoy's own baseline turnover (4/26/27, from the completed New Caney #121), driven by a 75-day rock activity both GCs could likely beat).</p>
     <p>Net: this is closer to a real ~$333–483K advantage than a scope mirage. Resolve the rock basis and the Teal drywall line — see <b>Next Steps</b> — and the comparison is largely firm.</p>
   </div>
 </section>
@@ -689,6 +717,56 @@ footer b{color:#fff}
   </div>
 </section>
 
+<section class="panel" id="schedule" role="tabpanel" aria-label="Schedule">
+  <div class="shead"><h2>Schedule — McCoy's baseline vs. the bids</h2></div>
+  <p class="lead">Anchored to McCoy's own internal baseline — rebased from the completed New Caney Store #121 by a pure date shift — which turns the building over to store planning on 4/26/27 — about 9.5 months from the 7/13 mobilize (soft-open support wraps ~late May). That's a real, built-store yardstick for both bids. Teal's logic-driven CPM is the only contractor schedule provided (shown below, with the baseline finish overlaid); Teinert gave a 10-month duration but no CPM. <i>Note: the baseline is a pure date shift, not yet adjusted for Canyon Lake's rock and utilities — so it proves the prototype's ~9.5-month construction duration, not that this site's conditions won't add time.</i></p>
+  <div class="schedstats">
+    <div class="sstat"><div class="sk">McCoy's baseline</div><div class="sv">&asymp; 9.5 mo</div><div class="sd">Turnover to store planning 4/26/27 · from New Caney #121</div></div>
+    <div class="sstat"><div class="sk">Teinert bid</div><div class="sv">10 months</div><div class="sd">sits on the baseline</div></div>
+    <div class="sstat"><div class="sk">Teal bid</div><div class="sv">&asymp; 12 months</div><div class="sd">substantial completion 7/23/27</div></div>
+    <div class="sstat" style="border-top-color:var(--gold)"><div class="sk">Teal vs. baseline</div><div class="sv" style="color:var(--gold-deep)">+ ~3 months</div><div class="sd">front-end rock &amp; sitework</div></div>
+  </div>
+  <div class="gantt">
+    <div class="ghead"><div></div><div class="gmonths">
+      <span>Jul'26</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan'27</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+    </div></div>
+    <div class="grow gmilerow"><div class="gl" style="color:var(--gold-deep);font-weight:700">Milestones</div><div class="gtrack">
+      <div class="gflag" style="left:18.3%"><i></i><em>PEMB delivered &middot; 10/5&ndash;19</em></div>
+      <div class="gflag" style="left:42.7%"><i></i><em>Teal erects &middot; 2/2</em></div>
+      <div class="gflag base" style="left:62%"><i></i><em>Baseline &middot; 4/26</em></div>
+      <div class="gflag" style="left:80.7%"><i></i><em>Substantial &middot; 7/23</em></div>
+    </div></div>
+    <div class="grow"><div class="gl">Survey / SWPPP</div><div class="gtrack"><div class="gbar" style="left:0%;width:2.5%"></div></div></div>
+    <div class="grow"><div class="gl">Strip &amp; rock excavation &middot; 75d</div><div class="gtrack"><div class="gbar lever" style="left:2.5%;width:26.2%"></div></div></div>
+    <div class="grow"><div class="gl">Building foundations &rarr; SOG</div><div class="gtrack"><div class="gbar" style="left:18.7%;width:24.3%"></div></div></div>
+    <div class="grow"><div class="gl">Site utilities &middot; 60d</div><div class="gtrack"><div class="gbar" style="left:24.7%;width:18.3%"></div></div></div>
+    <div class="grow"><div class="gl">Perimeter masonry wall &middot; 90d</div><div class="gtrack"><div class="gbar" style="left:43.3%;width:27.3%"></div></div></div>
+    <div class="grow"><div class="gl">Paving (subgrade &rarr; place)</div><div class="gtrack"><div class="gbar" style="left:43.3%;width:21.3%"></div></div></div>
+    <div class="grow"><div class="gl" style="color:var(--gold-deep)">PEMB on-site hold &middot; ~3.5 mo</div><div class="gtrack"><div class="gbar hold" style="left:18.3%;width:24.4%"></div></div></div>
+    <div class="grow"><div class="gl">PEMB erection &middot; 50d</div><div class="gtrack"><div class="gbar" style="left:43%;width:15.3%"></div></div></div>
+    <div class="grow"><div class="gl">Interior buildout &middot; 80d</div><div class="gtrack"><div class="gbar lever" style="left:55.7%;width:24.3%"></div></div></div>
+    <div class="grow"><div class="gl">Site finish (fence / landscape)</div><div class="gtrack"><div class="gbar" style="left:65%;width:15%"></div></div></div>
+    <div class="grow"><div class="gl">Closeout &middot; 30d</div><div class="gtrack"><div class="gbar" style="left:81.3%;width:9.3%"></div></div></div>
+  </div>
+  <div class="gkey">
+    <span><i class="sw" style="background:var(--green-mid)"></i> Activity</span>
+    <span><i class="sw" style="background:var(--gold)"></i> Compression lever</span>
+    <span><i class="sw" style="background:repeating-linear-gradient(45deg,#F1D27E 0 3px,#FBEEC6 3px 6px);border:1px dashed var(--gold-deep)"></i> Steel held on site</span>
+    <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--gold-deep)"></i> Owner / completion milestone</span>
+    <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--green-deep)"></i> McCoy's baseline turnover (New Caney #121)</span>
+  </div>
+  <div class="callout" style="margin-top:24px">
+    <h3>Where the ~3 months live</h3>
+    <p>McCoy's own baseline — built from a store that actually delivered — turns the building over to store planning on 4/26/27, about three months ahead of Teal's 7/23 substantial completion. So the extra time in Teal's plan reads as conservatism, not site necessity (pending the Canyon Lake rock confirmation). Three things stretch Teal to 12: a <b>75-day strip &amp; rock-excavation</b> activity at the front of the critical path (the same conservatism behind its $150K rock allowance), <b>largely sequential sitework</b> (strip &rarr; utilities &rarr; subgrade &rarr; paving runs ~9 months end to end), and an <b>80-day interior buildout</b> that overlaps PEMB erection by only 10 days.</p>
+  </div>
+  <div class="shead mt"><h2>Two scheduling levers that touch the money</h2></div>
+  <ol class="findings">
+    <li><span class="fnum">01</span><div><h4>The rock assumption drives both price and schedule</h4><p>The 75-day strip/rock-excavation activity and the $150K rock allowance are the same conservatism expressed two ways. Teinert prices rock leaner (shown "included") and bids 10 months — near McCoy's baseline turnover (~9.5 months). Confirming the rock basis settles ~$150K of cost and ~2 months of schedule at once.</p></div></li>
+    <li><span class="fnum">02</span><div><h4>The locked delivery exposes a Teal sequencing gap</h4><p>The building is locked for delivery <b>10/5&ndash;10/19</b> — McCoy's standard ~90-days-in timing. But Teal's CPM doesn't have a slab to erect on until <b>2/1/27</b>, so the steel would sit on site ~3.5 months. That's not a delivery risk — it's a sequencing question: ask Teal to get foundations and slab ready to erect shortly after the locked delivery, not in February. It also raises a staging/storage question — the PEMB is owner-furnished, so the hold is likely McCoy's risk (weather, damage, laydown) until it's erected.</p></div></li>
+    <li><span class="fnum">03</span><div><h4>Time is money: ~$85&ndash;125K of general conditions</h4><p>Teal's time-related general conditions run ~$42K/month. Teal lands ~3 months past McCoy's baseline turnover and ~2 past Teinert's bid — so compressing toward the 10-month range pulls roughly $85&ndash;125K of GCs and aligns the opening date with Teinert's. Worth real money either way.</p></div></li>
+  </ol>
+</section>
+
 <section class="panel" id="next" role="tabpanel" aria-label="Next Steps">
   <div class="shead"><h2>Three questions for each contractor</h2></div>
   <p class="lead">The fastest way to firm up the comparison — send these first. Each targets exactly where that bid is exposed.</p>
@@ -698,7 +776,7 @@ footer b{color:#fff}
       <p class="qsub">Detailed bid — one scope question and a schedule lever.</p>
       <ol>
         <li><b>Interior framing &amp; drywall.</b> Teinert itemizes $63,741 of drywall &amp; acoustical; your estimate shows no comparable line. Where is the interior metal-stud framing and drywall for the offices, restrooms and data room carried?</li>
-        <li><b>10-month schedule.</b> Your bid was priced at 12 months; the target — and Teinert's bid — is 10. Please re-price your general conditions (~$500K) and fee for a 10-month schedule.</li>
+        <li><b>10-month schedule &amp; the locked building.</b> The PEMB is locked for 10/5&ndash;10/19 delivery (our standard 90-days-in), yet your slab isn't ready to erect until February — a ~3.5-month hold. Show the schedule with foundations and slab ready to erect shortly after delivery, landing substantial completion near McCoy's 4/26 baseline turnover (~9.5 months), and the general-conditions/fee reduction that comes with it.</li>
         <li><b>True-ups &amp; rock basis.</b> Add the yard bell (GC scope) and termite pre-treatment if required, confirm whether the Knox Box + fire extinguishers (~$8K, 1st Fire Protection's scope) should be deleted, and give the unit-rate basis for the $150K rock allowance.</li>
       </ol>
     </div>
@@ -720,7 +798,7 @@ footer b{color:#fff}
       <li><span class="fnum">03</span><div><h4>Teinert's lower number is largely real</h4><p>Most of the spread is leaner pricing plus lower overhead and fee — Teinert's general conditions ($380K) and 5% fee ($319K) run about $210K below Teal's. That is markup, not missing scope.</p></div></li>
       <li><span class="fnum">04</span><div><h4>One Teal-side question the detail surfaced</h4><p>Teinert itemizes $63,741 of drywall &amp; acoustical; Teal's estimate shows no comparable interior-framing / drywall line. Confirm Teal's interior buildout is carried — if it is a gap, Teal's number would rise.</p></div></li>
       <li><span class="fnum">05</span><div><h4>Remaining open items are now narrow</h4><p>Teinert's rock-excavation basis (shown "included" with no allowance, vs Teal's $150K), its monument-masonry and HVAC-commissioning exclusions, plus the Teal yard-bell and termite gaps. Small dollars except the rock question.</p></div></li>
-      <li><span class="fnum">06</span><div><h4>The schedule is a live lever</h4><p>Teinert priced at 10 months; Teal at 12. Teal's general conditions and fee scale with duration, so re-pricing Teal at 10 months could lower its number — request it before treating any comparison as final.</p></div></li></ol>
+      <li><span class="fnum">06</span><div><h4>The schedule is a live lever</h4><p>McCoy's baseline (from the completed New Caney #121) turns over to store planning ~4/26/27, about 9.5 months; Teinert bids 10. Teal's CPM runs ~12 to substantial completion (7/23/27) — roughly 3 months past the baseline turnover, driven by a 75-day strip/rock-excavation activity up front. Compressing toward 10 months pulls ~$85–125K of general conditions — see the Schedule tab.</p></div></li></ol>
 
   <div class="shead mt"><h2>Clarifications to request before award</h2></div>
   <p class="lead">A leveled award decision needs these answered by both GCs — most of the apparent spread lives in the first two items.</p>
@@ -752,7 +830,7 @@ footer b{color:#fff}
 
 <footer>
   <div class="wrap">
-    <p><b>Basis of analysis.</b> Teal's bid form, control estimate, and clarifications (rev. 6.19.2026) reconciled to the dollar; Teinert's bid form and detailed cost breakdown (rev. 6.19.2026); and the responsibility matrix (rev. 6.10.2026) used to settle scope assignments.</p>
+    <p><b>Basis of analysis.</b> Teal's bid form, control estimate, and clarifications (rev. 6.19.2026) reconciled to the dollar; Teinert's bid form and detailed cost breakdown (rev. 6.19.2026); the responsibility matrix (rev. 6.10.2026) used to settle scope assignments; and Teal's preliminary CPM schedule (rev. 6.19.2026); plus McCoy's internal baseline schedule (rebased from New Caney #121, mobilize 7/13/26).</p>
     <p><b>Caveat.</b> Both bids now have line-item detail. Teinert's recap uses a 42,625 SF building area vs. 42,480 SF here — immaterial to the comparison. A short reconciliation call on the items flagged in Next Steps will firm up the final award numbers.</p>
     <p style="margin-top:10px;color:#8FB596">McCoy's Building Supply #122 — Canyon Lake · Bid leveling, not a recommendation to award.</p>
   </div>
