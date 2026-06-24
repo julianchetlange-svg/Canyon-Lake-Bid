@@ -125,6 +125,8 @@ h2{font-size:30px;font-weight:700;margin:0;letter-spacing:.01em}
 .matrix td{font-size:12.5px;padding:8px 10px}
 .matrix .cdesc{font-weight:600;color:var(--ink)}
 .tbl .mx{color:var(--muted);font-size:12px}
+.deduct{color:#B00020;font-weight:600}
+.dnote{font-size:12.5px;color:var(--muted)}
 .m-warn td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
 .m-ok td:first-child{box-shadow:inset 3px 0 0 var(--green-mid)}
 
@@ -314,7 +316,7 @@ footer b{color:#fff}
   <div class="bottomline" style="margin-top:8px">
     <h3>Teinert's lead looks real — confirm a short list.</h3>
     <p>Teinert is lower at every level of leveling — <b>$534,181</b> on the raw base bids, <b>$483,108</b> after each bid's own adds, and <b>$333,108</b> once rock is applied to both sides. Teinert's detailed breakdown now backs that up: the two biggest feared gaps — the aerobic septic (~$196K) and the TCS controls (~$53K) — are both fully included, and structural steel and exterior glazing are correctly left to the supplier.</p>
-    <p>The lower number is mostly leaner pricing and lower overhead/fee (~$210K below Teal), not missing scope. The open list is short: Teinert's <b>rock-excavation basis</b> (shown "included" with no allowance, where Teal hedges with $150K), its small <b>monument-masonry and HVAC-commissioning</b> exclusions, a Teal-side question on <b>interior drywall</b> ($64K Teinert itemizes that Teal doesn't show), and <b>re-pricing Teal at the 10-month schedule</b> (its 12-month plan runs ~3 months past McCoy's own baseline turnover (4/26/27, from the completed New Caney #121), driven by a 75-day rock activity both GCs could likely beat).</p>
+    <p>The lower number is mostly leaner pricing and lower overhead/fee (~$210K below Teal), not missing scope. The open list is short: Teinert's <b>rock-excavation basis</b> (shown "included" with no allowance, where Teal hedges with $150K), its small <b>monument-masonry and HVAC-commissioning</b> exclusions, a <b>~$64K Teinert deduct</b> for drywall &amp; framing (McCoy's carpenters handle it; Teal correctly excluded it), and <b>re-pricing Teal at the 10-month schedule</b> (its 12-month plan runs ~3 months past McCoy's own baseline turnover (4/26/27, from the completed New Caney #121), driven by a 75-day rock activity both GCs could likely beat).</p>
     <p>Net: this is closer to a real ~$333–483K advantage than a scope mirage. Resolve the rock basis and the Teal drywall line — see <b>Next Steps</b> — and the comparison is largely firm.</p>
   </div>
 </section>
@@ -386,7 +388,7 @@ footer b{color:#fff}
       </tr>
       <tr>
         <td class="cdiv">09</td>
-        <td class="cdesc">Finishes <span class="note">Detail: most of the gap is Drywall & Acoustical ($63,741) that Teinert itemizes and Teal does not show — confirm Teal's interior framing/drywall.</span></td>
+        <td class="cdesc">Finishes <span class="note">Detail: the gap is Drywall & Acoustical ($63,741) Teinert carries that is McCoy's-carpenter scope — a likely Teinert deduct. Teal correctly excludes it.</span></td>
         <td class="num">$110,685</td>
         <td class="num">$205,842</td>
         <td class="num tein-pos">($95,157)</td>
@@ -663,9 +665,9 @@ footer b{color:#fff}
       </tr>
       <tr class="m-warn">
         <td class="cdesc">Interior framing &amp; drywall</td>
-        <td>Not itemized — confirm</td>
-        <td>Incl. ($63,741)</td>
-        <td class="mx">GC — interior buildout</td>
+        <td>Excluded (correct)</td>
+        <td>Incl. ($63,741) — deduct</td>
+        <td class="mx">McCoy's Carpenters</td>
         <td class="flag">!</td>
       </tr>
       <tr class="m-warn">
@@ -715,17 +717,94 @@ footer b{color:#fff}
     <span><i class="sw" style="background:var(--green-mid)"></i> Settled — matches matrix</span>
     <span><i class="sw" style="background:var(--gold)"></i> Open — diverges or needs confirming</span>
   </div>
+
+  <div class="shead mt"><h2>Possible deductions — owner/vendor scope a GC carried</h2></div>
+  <p class="lead">Items the responsibility matrix assigns to McCoy's, a named vendor, or the building supplier that nonetheless showed up in a GC's number. These come out once the bids are corrected. Firm figures where the line is itemized; "confirm" where it's bundled.</p>
+  <table class="tbl">
+    <thead><tr><th>Item</th><th>Belongs to (per matrix)</th><th class="num">Teal</th><th class="num">Teinert</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="cdesc">Drywall &amp; framing <span class="note">within Teinert's "Drywall &amp; Acoustical" $63,741</span></td>
+        <td class="mx">McCoy's Carpenters</td>
+        <td class="num">&mdash;</td>
+        <td class="num deduct">up to &minus;$63,741*</td>
+        <td class="dnote">*Deduct the drywall portion; confirm any acoustical ceiling or wood-structure insulation that legitimately stays GC. Teal correctly excluded it.</td>
+      </tr>
+      <tr>
+        <td class="cdesc">Knox Box + fire ext. &amp; cabinets</td>
+        <td class="mx">1st Fire Protection (Owner)</td>
+        <td class="num deduct">&minus;$8,000</td>
+        <td class="num deduct">break out</td>
+        <td class="dnote">Both carry it; Teinert's is bundled in Toilet Compartments ($27,834) — itemize &amp; deduct.</td>
+      </tr>
+      <tr>
+        <td class="cdesc">Kee-gate over mezzanine</td>
+        <td class="mx">CT Darnell (supplier)</td>
+        <td class="num deduct">&minus;$1,250</td>
+        <td class="num">&mdash; <span class="sub">excluded</span></td>
+        <td class="dnote">Teal carries; Teinert correctly excludes. Confirm it's the mezzanine kee-gate.</td>
+      </tr>
+      <tr>
+        <td class="cdesc">Emergency / fire / exit signage</td>
+        <td class="mx">Signcrafters (Owner)</td>
+        <td class="num">confirm</td>
+        <td class="num">&mdash; <span class="sub">excluded</span></td>
+        <td class="dnote">Confirm Teal's interior signage ($3,245) carries only code-req'd room signs, not exit/emergency.</td>
+      </tr>
+      <tr>
+        <td class="cdesc">Baby changing station</td>
+        <td class="mx">McCoy's Carpenters</td>
+        <td class="num">&mdash;</td>
+        <td class="num">confirm</td>
+        <td class="dnote">Confirm Teinert's toilet accessories don't include it.</td>
+      </tr>
+    </tbody>
+    <tfoot><tr>
+      <td>Identified deductions</td><td></td>
+      <td class="num deduct">&asymp; &minus;$9,250</td>
+      <td class="num deduct">&asymp; &minus;$64,000+</td>
+      <td class="dnote">Plus the "confirm" items above.</td>
+    </tr></tfoot>
+  </table>
+  <div class="shead mt"><h2>Adds owed — GC scope a bid left out</h2></div>
+  <p class="lead">The mirror image: matrix-confirmed GC scope a contractor excluded and owes back. Add figures are estimates pending each GC's pricing.</p>
+  <table class="tbl">
+    <thead><tr><th>Item</th><th>Per matrix</th><th class="num">Teal</th><th class="num">Teinert</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="cdesc">Yard bell / buzzer</td><td class="mx">GC &mdash; 11 12 00</td><td class="num">+ price (~$3K est)</td><td class="num">carried*</td><td class="dnote">Teal excluded it; Teinert installs (OFCI). *Confirm Teinert's bell furnish — matrix puts furnish on the GC.</td></tr>
+      <tr><td class="cdesc">Termite pre-treatment</td><td class="mx">GC</td><td class="num">+ ~$6,500 est</td><td class="num">carried</td><td class="dnote">Teal excluded (clarification #7); Teinert carries Pest Spray $6,500.</td></tr>
+      <tr><td class="cdesc">Monument-sign masonry</td><td class="mx">GC builds; Highpoint mounts</td><td class="num">carried ($5,000)</td><td class="num">+ ~$5,000 est</td><td class="dnote">Teinert shows it "by Owner" — owes the cultured-stone assembly. Teal carries it.</td></tr>
+      <tr><td class="cdesc">HVAC commissioning</td><td class="mx">confirm (GC vs 3rd-party)</td><td class="num">T&amp;B incl.</td><td class="num">+ confirm</td><td class="dnote">Teinert excludes "Commissioning." If it's GC-scope Cx (not an owner Cx agent), price it.</td></tr>
+    </tbody>
+    <tfoot><tr><td>Identified adds (est.)</td><td></td><td class="num">&asymp; +$9,500</td><td class="num">&asymp; +$5,000</td><td class="dnote">Plus the "confirm" items.</td></tr></tfoot>
+  </table>
+
+  <div class="shead mt"><h2>Net adjustment per contractor</h2></div>
+  <p class="lead">Deducts and adds combined. Add figures are estimates pending pricing, so the corrected base is directional — not a quote.</p>
+  <table class="tbl">
+    <thead><tr><th>Contractor</th><th class="num">As-bid base</th><th class="num">Deducts</th><th class="num">Adds (est.)</th><th class="num">Net</th><th class="num">Corrected base (est.)</th></tr></thead>
+    <tbody>
+      <tr><td class="cdesc">Teal</td><td class="num">$7,236,593</td><td class="num deduct">&minus;$9,250</td><td class="num">+$9,500</td><td class="num">&asymp; wash</td><td class="num">&asymp; $7,236,600</td></tr>
+      <tr><td class="cdesc">Teinert</td><td class="num">$6,702,412</td><td class="num deduct">&minus;$64,000+</td><td class="num">+$5,000</td><td class="num deduct">&asymp; &minus;$59,000</td><td class="num">&asymp; $6,643,400</td></tr>
+    </tbody>
+    <tfoot><tr><td>Corrected gap (Teinert lower)</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">&asymp; $593,000</td></tr></tfoot>
+  </table>
+  <div class="callout" style="margin-top:18px">
+    <h3>Teinert's lead widens slightly</h3>
+    <p>Teal's deducts and adds roughly cancel — it nets close to a wash. Teinert's ~$64K of deducts dwarf its ~$5K monument add, so it nets down ~$59K. The corrected gap moves from <b>$534K (as-bid) to ~$593K</b> in Teinert's favor — driven almost entirely by the drywall line that belongs to McCoy's carpenters. The "confirm" items on both sides are small and unlikely to change the order.</p>
+  </div>
 </section>
 
 <section class="panel" id="schedule" role="tabpanel" aria-label="Schedule">
   <div class="shead"><h2>Schedule — McCoy's baseline vs. the bids</h2></div>
-  <p class="lead">Anchored to McCoy's own internal baseline — rebased from the completed New Caney Store #121 by a pure date shift — which turns the building over to store planning on 4/26/27 — about 9.5 months from the 7/13 mobilize (soft-open support wraps ~late May). That's a real, built-store yardstick for both bids. Teal's logic-driven CPM is the only contractor schedule provided (shown below, with the baseline finish overlaid); Teinert gave a 10-month duration but no CPM. <i>Note: the baseline is a pure date shift, not yet adjusted for Canyon Lake's rock and utilities — so it proves the prototype's ~9.5-month construction duration, not that this site's conditions won't add time.</i></p>
+  <p class="lead">Anchored to McCoy's own internal baseline — rebased from the completed New Caney Store #121 by a pure date shift — which turns the building over to store planning on 4/26/27 — about 9.5 months from the 7/13 mobilize (soft-open support wraps ~late May). That's a real, built-store yardstick. Both GCs now provided logic-driven CPMs, shown below on a shared timeline with the baseline turnover overlaid: Teal at ~12 months (substantial completion 7/23/27), Teinert at ~10 (5/20/27, three weeks past the baseline). <i>Note: the baseline is a pure date shift, not yet adjusted for Canyon Lake's rock and utilities — so it proves the prototype's ~9.5-month construction duration, not that this site's conditions won't add time.</i></p>
   <div class="schedstats">
     <div class="sstat"><div class="sk">McCoy's baseline</div><div class="sv">&asymp; 9.5 mo</div><div class="sd">Turnover to store planning 4/26/27 · from New Caney #121</div></div>
-    <div class="sstat"><div class="sk">Teinert bid</div><div class="sv">10 months</div><div class="sd">sits on the baseline</div></div>
-    <div class="sstat"><div class="sk">Teal bid</div><div class="sv">&asymp; 12 months</div><div class="sd">substantial completion 7/23/27</div></div>
-    <div class="sstat" style="border-top-color:var(--gold)"><div class="sk">Teal vs. baseline</div><div class="sv" style="color:var(--gold-deep)">+ ~3 months</div><div class="sd">front-end rock &amp; sitework</div></div>
+    <div class="sstat"><div class="sk">Teinert CPM</div><div class="sv">5/20/27</div><div class="sd">~10 mo · 3 wks past baseline</div></div>
+    <div class="sstat"><div class="sk">Teal CPM</div><div class="sv">7/23/27</div><div class="sd">~12 mo substantial completion</div></div>
+    <div class="sstat" style="border-top-color:var(--gold)"><div class="sk">Teal vs. Teinert</div><div class="sv" style="color:var(--gold-deep)">+ ~2 months</div><div class="sd">later substantial completion</div></div>
   </div>
+  <div class="shead mt"><h2>Teal — 12-month CPM</h2></div>
   <div class="gantt">
     <div class="ghead"><div></div><div class="gmonths">
       <span>Jul'26</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan'27</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
@@ -755,15 +834,43 @@ footer b{color:#fff}
     <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--gold-deep)"></i> Owner / completion milestone</span>
     <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--green-deep)"></i> McCoy's baseline turnover (New Caney #121)</span>
   </div>
-  <div class="callout" style="margin-top:24px">
-    <h3>Where the ~3 months live</h3>
-    <p>McCoy's own baseline — built from a store that actually delivered — turns the building over to store planning on 4/26/27, about three months ahead of Teal's 7/23 substantial completion. So the extra time in Teal's plan reads as conservatism, not site necessity (pending the Canyon Lake rock confirmation). Three things stretch Teal to 12: a <b>75-day strip &amp; rock-excavation</b> activity at the front of the critical path (the same conservatism behind its $150K rock allowance), <b>largely sequential sitework</b> (strip &rarr; utilities &rarr; subgrade &rarr; paving runs ~9 months end to end), and an <b>80-day interior buildout</b> that overlaps PEMB erection by only 10 days.</p>
+  <div class="shead mt"><h2>Teinert — 10-month CPM</h2></div>
+  <p class="lead">Substantial completion 5/20/27. The site drives the finish (landscape &amp; striping to 5/19); the building is done ~4/2 with ~6 weeks of float. Leaner front-end earthwork and an erect-on-delivery sequence buy the two months.</p>
+  <div class="gantt">
+    <div class="ghead"><div></div><div class="gmonths">
+      <span>Jul'26</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan'27</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+    </div></div>
+    <div class="grow gmilerow"><div class="gl" style="color:var(--gold-deep);font-weight:700">Milestones</div><div class="gtrack">
+      <div class="gflag" style="left:18.3%"><i></i><em>PEMB delivered &middot; 10/5&ndash;19</em></div>
+      <div class="gflag base" style="left:61%"><i></i></div>
+      <div class="gflag" style="left:66.7%"><i></i><em>Substantial &middot; 5/20</em></div>
+    </div></div>
+    <div class="grow"><div class="gl">Mobilize / clear &amp; grub &middot; ~13d</div><div class="gtrack"><div class="gbar" style="left:0%;width:3.5%"></div></div></div>
+    <div class="grow"><div class="gl">Building pad &rarr; slab &middot; 6 wks</div><div class="gtrack"><div class="gbar" style="left:3.7%;width:9.2%"></div></div></div>
+    <div class="grow"><div class="gl" style="color:var(--gold-deep)">Site grading &amp; base &middot; 20d</div><div class="gtrack"><div class="gbar lever" style="left:6.7%;width:5.3%"></div></div></div>
+    <div class="grow"><div class="gl">Site utilities &middot; 30d</div><div class="gtrack"><div class="gbar" style="left:12.7%;width:9.1%"></div></div></div>
+    <div class="grow"><div class="gl">Erect PEMB &middot; 40d (slab ready 9/18)</div><div class="gtrack"><div class="gbar" style="left:18.3%;width:11.6%"></div></div></div>
+    <div class="grow"><div class="gl">Drainage + retaining walls</div><div class="gtrack"><div class="gbar" style="left:22.7%;width:15.8%"></div></div></div>
+    <div class="grow"><div class="gl">Interior buildout</div><div class="gtrack"><div class="gbar" style="left:25.8%;width:30.4%"></div></div></div>
+    <div class="grow"><div class="gl">Site concrete paving &middot; 40d</div><div class="gtrack"><div class="gbar" style="left:37.1%;width:12.4%"></div></div></div>
+    <div class="grow"><div class="gl" style="color:var(--gold-deep)">Site finish &middot; fence / landscape / stripe</div><div class="gtrack"><div class="gbar lever" style="left:49.8%;width:16.7%"></div></div></div>
+    <div class="grow"><div class="gl">Closeout &rarr; substantial completion</div><div class="gtrack"><div class="gbar" style="left:56.9%;width:9.8%"></div></div></div>
   </div>
-  <div class="shead mt"><h2>Two scheduling levers that touch the money</h2></div>
+  <div class="gkey">
+    <span><i class="sw" style="background:var(--green-mid)"></i> Activity</span>
+    <span><i class="sw" style="background:var(--gold)"></i> Critical &mdash; drives the finish</span>
+    <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--gold-deep)"></i> Delivery / completion</span>
+    <span><i style="display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:9px solid var(--green-deep)"></i> McCoy's baseline turnover (4/26)</span>
+  </div>
+  <div class="callout" style="margin-top:24px">
+    <h3>Same job, two strategies</h3>
+    <p>The two CPMs diverge on three choices. <b>Earthwork:</b> Teal carries a 75-day strip/rock activity up front; Teinert carries ~30 days of clear-and-grub plus grading with no separate rock line — the schedule side of its leaner "rock included" pricing. <b>The building:</b> Teinert gets its slab down by 9/18 and erects as the steel lands (no hold), running the building in parallel with sitework; Teal finishes 75 days of rock first, so its slab isn't ready until February and the owner-furnished steel sits ~3.5 months. <b>What finishes last:</b> for Teinert the site (landscape &amp; striping) drives substantial completion to 5/20 while the building waits with ~6 weeks of float; for Teal building and site are co-critical at 7/23. Net: Teinert lands ~3 weeks past McCoy's 4/26 baseline turnover, Teal ~3 months past it.</p>
+  </div>
+  <div class="shead mt"><h2>What the two schedules mean for the decision</h2></div>
   <ol class="findings">
-    <li><span class="fnum">01</span><div><h4>The rock assumption drives both price and schedule</h4><p>The 75-day strip/rock-excavation activity and the $150K rock allowance are the same conservatism expressed two ways. Teinert prices rock leaner (shown "included") and bids 10 months — near McCoy's baseline turnover (~9.5 months). Confirming the rock basis settles ~$150K of cost and ~2 months of schedule at once.</p></div></li>
-    <li><span class="fnum">02</span><div><h4>The locked delivery exposes a Teal sequencing gap</h4><p>The building is locked for delivery <b>10/5&ndash;10/19</b> — McCoy's standard ~90-days-in timing. But Teal's CPM doesn't have a slab to erect on until <b>2/1/27</b>, so the steel would sit on site ~3.5 months. That's not a delivery risk — it's a sequencing question: ask Teal to get foundations and slab ready to erect shortly after the locked delivery, not in February. It also raises a staging/storage question — the PEMB is owner-furnished, so the hold is likely McCoy's risk (weather, damage, laydown) until it's erected.</p></div></li>
-    <li><span class="fnum">03</span><div><h4>Time is money: ~$85&ndash;125K of general conditions</h4><p>Teal's time-related general conditions run ~$42K/month. Teal lands ~3 months past McCoy's baseline turnover and ~2 past Teinert's bid — so compressing toward the 10-month range pulls roughly $85&ndash;125K of GCs and aligns the opening date with Teinert's. Worth real money either way.</p></div></li>
+    <li><span class="fnum">01</span><div><h4>The rock assumption drives both schedules and both prices</h4><p>Teal carries a 75-day strip/rock activity and a $150K allowance; Teinert's CPM carries ~30 days of earthwork with no rock line and prices rock "included." Same conservatism, opposite calls. The 12-vs-10-month durations and the ~$150K cost spread both hinge on the actual rock quantity — so one confirmation settles cost and schedule for both bidders at once.</p></div></li>
+    <li><span class="fnum">02</span><div><h4>Teinert erects on delivery; Teal holds the steel ~3.5 months</h4><p>The building is locked for <b>10/5&ndash;10/19</b> delivery — McCoy's standard 90-days-in. Teinert's slab is down by 9/18, so it stands the steel up as it lands. Teal's slab isn't ready until <b>2/1/27</b> (behind the 75-day rock activity), so the owner-furnished steel sits ~3.5 months — McCoy's risk for weather, damage and laydown. Teinert's sequencing is the model; ask Teal to show foundations and slab ready to erect shortly after the locked delivery.</p></div></li>
+    <li><span class="fnum">03</span><div><h4>Time is money: ~$85&ndash;125K of general conditions</h4><p>Teal's time-related general conditions run ~$42K/month. Teal lands ~3 months past McCoy's baseline turnover and ~2 past Teinert's 5/20 completion — so compressing toward the 10-month range pulls roughly $85&ndash;125K of GCs and aligns the opening date with Teinert's. Worth real money either way.</p></div></li>
   </ol>
 </section>
 
@@ -773,20 +880,20 @@ footer b{color:#fff}
   <div class="qgrid">
     <div class="qcard teal">
       <div class="qh">Teal Construction</div>
-      <p class="qsub">Detailed bid — one scope question and a schedule lever.</p>
+      <p class="qsub">Detailed bid — a schedule lever and risk terms.</p>
       <ol>
-        <li><b>Interior framing &amp; drywall.</b> Teinert itemizes $63,741 of drywall &amp; acoustical; your estimate shows no comparable line. Where is the interior metal-stud framing and drywall for the offices, restrooms and data room carried?</li>
-        <li><b>10-month schedule &amp; the locked building.</b> The PEMB is locked for 10/5&ndash;10/19 delivery (our standard 90-days-in), yet your slab isn't ready to erect until February — a ~3.5-month hold. Show the schedule with foundations and slab ready to erect shortly after delivery, landing substantial completion near McCoy's 4/26 baseline turnover (~9.5 months), and the general-conditions/fee reduction that comes with it.</li>
+        <li><b>10-month schedule &amp; the locked building.</b> The PEMB is locked for 10/5&ndash;10/19 delivery (our standard 90-days-in), yet your slab isn't ready to erect until February — a ~3.5-month hold. Show the schedule with foundations and slab ready to erect shortly after delivery, landing near McCoy's 4/26 baseline turnover (~9.5 months), and the general-conditions/fee reduction that comes with it.</li>
+        <li><b>Escalation &amp; contingency.</b> You pass escalation through at cost + fee and carry no contingency, while Teinert carries a 3% buffer with savings returned. Will you cap escalation or add a fixed contingency so McCoy's isn't exposed to open-ended cost growth?</li>
         <li><b>True-ups &amp; rock basis.</b> Add the yard bell (GC scope) and termite pre-treatment if required, confirm whether the Knox Box + fire extinguishers (~$8K, 1st Fire Protection's scope) should be deleted, and give the unit-rate basis for the $150K rock allowance.</li>
       </ol>
     </div>
     <div class="qcard tein">
       <div class="qh">Teinert Construction</div>
-      <p class="qsub">Detailed breakdown received — a few items left to firm up.</p>
+      <p class="qsub">Detailed breakdown received — one deduct and two to firm up.</p>
       <ol>
+        <li><b>Drywall &amp; acoustical ($63,741).</b> Why is this carried? McCoy's internal carpenters handle interior framing and drywall (and the matrix assigns wood-structure framing/finishes to McCoy's Carpenters). Deduct the drywall/framing portion; clarify any acoustical ceiling or insulation that legitimately remains GC.</li>
         <li><b>Rock excavation.</b> Your earthwork, utilities and septic all show rock excavation "included" with no separate allowance. Is that a firm fixed-price commitment regardless of quantity (no change orders), or a nominal assumption? Teal instead carries a $150K allowance.</li>
         <li><b>Earthwork pricing.</b> Your earthwork ($369K, bundling SWPPP, demo, build pad and retaining-wall excavation) runs ~$270K below Teal. Confirm the mass-grading cut/fill and import/export quantities behind it.</li>
-        <li><b>Exclusions vs. the matrix.</b> You show the monument-sign masonry "by Owner" and HVAC commissioning excluded, but the responsibility matrix puts the monument cultured-stone assembly on the GC. Confirm these are intended and price the adds.</li>
       </ol>
     </div>
   </div>
@@ -796,7 +903,7 @@ footer b{color:#fff}
       <li><span class="fnum">01</span><div><h4>The Teinert detail closes the big gaps</h4><p>The two items I most feared were missing — the aerobic septic (~$196K, Davis Septic) and the TCS/EMS controls (~$53K) — are both fully included. The apparent Communications shortfall was allocation: Teinert carries TCS under HVAC, so its comms + controls ($163,821) match Teal's ($163,819) almost exactly.</p></div></li>
       <li><span class="fnum">02</span><div><h4>Supplier scope is correctly excluded by both</h4><p>Teinert's breakdown confirms structural &amp; decorative steel, the roof ladder, and all exterior doors / windows / skylights sit with CT Darnell (the supplier). So Teinert's higher Metals and Openings are richer pricing of legitimate interior scope — not double-carried supplier work.</p></div></li>
       <li><span class="fnum">03</span><div><h4>Teinert's lower number is largely real</h4><p>Most of the spread is leaner pricing plus lower overhead and fee — Teinert's general conditions ($380K) and 5% fee ($319K) run about $210K below Teal's. That is markup, not missing scope.</p></div></li>
-      <li><span class="fnum">04</span><div><h4>One Teal-side question the detail surfaced</h4><p>Teinert itemizes $63,741 of drywall &amp; acoustical; Teal's estimate shows no comparable interior-framing / drywall line. Confirm Teal's interior buildout is carried — if it is a gap, Teal's number would rise.</p></div></li>
+      <li><span class="fnum">04</span><div><h4>Drywall is McCoy's scope — a Teinert deduct</h4><p>McCoy's internal carpenters handle interior framing and drywall (the matrix assigns wood-structure framing/finishes to McCoy's Carpenters). So Teal correctly excludes it, and Teinert is carrying ~$64K of owner scope ($63,741 Drywall &amp; Acoustical) — a deduct that widens its lead toward ~$600K. Clarify any acoustical/insulation that legitimately remains GC.</p></div></li>
       <li><span class="fnum">05</span><div><h4>Remaining open items are now narrow</h4><p>Teinert's rock-excavation basis (shown "included" with no allowance, vs Teal's $150K), its monument-masonry and HVAC-commissioning exclusions, plus the Teal yard-bell and termite gaps. Small dollars except the rock question.</p></div></li>
       <li><span class="fnum">06</span><div><h4>The schedule is a live lever</h4><p>McCoy's baseline (from the completed New Caney #121) turns over to store planning ~4/26/27, about 9.5 months; Teinert bids 10. Teal's CPM runs ~12 to substantial completion (7/23/27) — roughly 3 months past the baseline turnover, driven by a 75-day strip/rock-excavation activity up front. Compressing toward 10 months pulls ~$85–125K of general conditions — see the Schedule tab.</p></div></li></ol>
 
@@ -805,8 +912,8 @@ footer b{color:#fff}
   <ol class="rfi">
     <li><span class="rnum">1</span><div>
       <h4>Concrete &amp; interior buildout</h4>
-      <p class="ask">Teinert's Div 03 breakout is now in hand; the open piece is on Teal's side. Reconcile, line by line:</p>
-      <ul><li>Teal interior framing &amp; drywall (Teinert shows $63,741; Teal shows none)</li><li>Building foundation/slab figures</li><li>Site concrete paving</li><li>Retaining walls</li><li>Light-pole bases &amp; transformer pad</li><li>Canopy &amp; sign foundations</li></ul>
+      <p class="ask">Both Div 03 breakouts are in hand. Reconcile, line by line:</p>
+      <ul><li>Teinert drywall &amp; framing deduct (~$64K — McCoy's carpenters' scope)</li><li>Building foundation/slab figures</li><li>Site concrete paving</li><li>Retaining walls</li><li>Light-pole bases &amp; transformer pad</li><li>Canopy &amp; sign foundations</li></ul>
     </div></li>
     <li><span class="rnum">2</span><div>
       <h4>Divisions 31 / 32 / 33 — site reconciliation</h4>
